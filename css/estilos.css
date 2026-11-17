@@ -1,5 +1,9 @@
+/*
+  Estilos para la hoja de vida
+*/
 @charset "UTF-8";
 
+/* Colores y valores reutilizables de toda la página */
 :root {
   --negro: #080808;
   --negro-suave: #111111;
@@ -12,16 +16,19 @@
   --sombra: 0 18px 45px rgba(0, 0, 0, 0.28);
 }
 
+/* Normalización básica para mantener un modelo de caja consistente */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+/* Desplazamiento suave entre las secciones del currículo */
 html {
   scroll-behavior: smooth;
 }
 
+/* Estilos generales y fondo principal del documento */
 body {
   background:
     radial-gradient(circle at 85% 4%, rgba(229, 27, 35, 0.11), transparent 25rem),
@@ -31,11 +38,13 @@ body {
   line-height: 1.7;
 }
 
+/* Enlaces sin decoración por defecto para aplicar estilos propios */
 a {
   color: inherit;
   text-decoration: none;
 }
 
+/* Encabezado fijo con efecto de desenfoque */
 .encabezado {
   background: rgba(8, 8, 8, 0.9);
   border-bottom: 1px solid var(--borde);
@@ -45,6 +54,7 @@ a {
   backdrop-filter: blur(14px);
 }
 
+/* Contenedores centrales con ancho máximo */
 .barra,
 .contenedor {
   margin: 0 auto;
@@ -52,6 +62,7 @@ a {
   width: calc(100% - 3rem);
 }
 
+/* Distribución de la marca y el menú en el encabezado */
 .barra {
   align-items: center;
   display: flex;
@@ -59,6 +70,7 @@ a {
   min-height: 76px;
 }
 
+/* Nombre o marca personal */
 .marca {
   color: var(--blanco);
   font-size: 1.15rem;
@@ -66,18 +78,21 @@ a {
   letter-spacing: 0.04em;
 }
 
+/* Detalle visual que precede a la marca */
 .marca::before {
   color: var(--rojo);
   content: "/";
   margin-right: 0.35rem;
 }
 
+/* Navegación principal */
 .menu {
   display: flex;
   gap: 1.5rem;
   list-style: none;
 }
 
+/* Enlaces del menú en mayúsculas */
 .menu a {
   color: var(--gris-claro);
   font-size: 0.83rem;
@@ -87,25 +102,30 @@ a {
   transition: color 0.2s ease;
 }
 
+/* Estado interactivo de los enlaces del menú */
 .menu a:hover,
 .menu a:focus-visible {
   color: var(--rojo);
 }
 
+/* Espaciado general del contenido */
 .contenedor {
   padding: 4rem 0 5rem;
 }
 
+/* Separación visual y posición de cada sección */
 .seccion {
   border-bottom: 1px solid var(--borde);
   padding: 4rem 0;
   scroll-margin-top: 76px;
 }
 
+/* La última sección no necesita una línea inferior */
 .seccion:last-child {
   border-bottom: 0;
 }
 
+/* Portada: fotografía a la izquierda e información principal a la derecha */
 .portada {
   align-items: center;
   border-bottom: 0;
@@ -116,6 +136,7 @@ a {
   padding-top: 2rem;
 }
 
+/* Fotografía de perfil con degradado para mejorar la legibilidad */
 .foto {
   align-items: flex-end;
   background:
@@ -131,6 +152,7 @@ a {
   position: relative;
 }
 
+/* La imagen se utiliza como fondo del contenedor */
 .foto::after {
   border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 8px;
@@ -140,10 +162,12 @@ a {
   position: absolute;
 }
 
+/* Se oculta la imagen HTML porque la fotografía ya está definida como fondo */
 .foto img {
   display: none;
 }
 
+/* Etiqueta destacada sobre la fotografía */
 .etiqueta {
   background: var(--rojo);
   border-radius: 4px;
@@ -157,23 +181,27 @@ a {
   z-index: 1;
 }
 
+/* Jerarquía tipográfica de los títulos */
 h1,
 h2,
 h3 {
   line-height: 1.2;
 }
 
+/* Título principal de la hoja de vida */
 h1 {
   font-size: clamp(2.6rem, 6vw, 5rem);
   letter-spacing: -0.05em;
   max-width: 700px;
 }
 
+/* Texto resaltado dentro del título */
 .destacado {
   color: var(--rojo);
   display: block;
 }
 
+/* Títulos de las secciones */
 h2 {
   border-left: 4px solid var(--rojo);
   font-size: clamp(1.7rem, 3vw, 2.4rem);
@@ -181,31 +209,37 @@ h2 {
   padding-left: 0.8rem;
 }
 
+/* Subtítulos de tarjetas y contenidos */
 h3 {
   color: var(--blanco);
   font-size: 1.15rem;
   margin-bottom: 0.7rem;
 }
 
+/* Texto corrido y textos introductorios */
 p {
   color: #d3d3d3;
   max-width: 78ch;
 }
 
+/* Presentación breve debajo del título principal */
 .intro {
   color: #c6c6c6;
   font-size: 1.08rem;
   margin: 1.5rem 0 2rem;
 }
 
+/* Énfasis dentro del contenido */
 strong {
   color: var(--blanco);
 }
 
+/* Texto en cursiva */
 em {
   color: #ef7378;
 }
 
+/* Grupo de botones de acción */
 .botones {
   display: flex;
   flex-wrap: wrap;
@@ -213,6 +247,7 @@ em {
   margin-top: 1.5rem;
 }
 
+/* Botón principal */
 .boton {
   background: var(--rojo);
   border: 1px solid var(--rojo);
@@ -226,6 +261,7 @@ em {
   transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
 }
 
+/* Interacción común de los botones */
 .boton:hover,
 .boton:focus-visible {
   background: var(--rojo-oscuro);
@@ -233,17 +269,20 @@ em {
   transform: translateY(-2px);
 }
 
+/* Variante secundaria con fondo transparente */
 .boton.claro {
   background: transparent;
   border-color: #555;
 }
 
+/* Estado interactivo del botón secundario */
 .boton.claro:hover,
 .boton.claro:focus-visible {
   border-color: var(--rojo);
   color: var(--rojo);
 }
 
+/* Lista flexible de habilidades */
 .habilidades {
   display: flex;
   flex-wrap: wrap;
@@ -251,6 +290,7 @@ em {
   list-style: none;
 }
 
+/* Cada habilidad se presenta como una etiqueta */
 .habilidades li {
   background: var(--gris);
   border: 1px solid var(--borde);
@@ -261,21 +301,25 @@ em {
   transition: border-color 0.2s ease, color 0.2s ease;
 }
 
+/* Resaltado de una habilidad al pasar el cursor */
 .habilidades li:hover {
   border-color: var(--rojo);
   color: var(--rojo);
 }
 
+/* Permite desplazar la tabla horizontalmente en pantallas pequeñas */
 .envoltorio {
   overflow-x: auto;
 }
 
+/* Tabla de formación o experiencia */
 .tabla {
   border-collapse: collapse;
   min-width: 650px;
   width: 100%;
 }
 
+/* Celdas de la tabla */
 .tabla th,
 .tabla td {
   border-bottom: 1px solid var(--borde);
@@ -284,6 +328,7 @@ em {
   vertical-align: top;
 }
 
+/* Encabezados de la tabla */
 .tabla th {
   background: var(--rojo);
   color: var(--blanco);
@@ -292,14 +337,17 @@ em {
   text-transform: uppercase;
 }
 
+/* Contenido de las celdas */
 .tabla td {
   color: #cfcfcf;
 }
 
+/* Alternancia de filas para facilitar la lectura */
 .tabla tr:nth-child(even) td {
   background: rgba(255, 255, 255, 0.035);
 }
 
+/* Tarjetas para agrupar experiencia y responsabilidades */
 .tarjeta {
   background: linear-gradient(135deg, var(--gris), var(--negro-suave));
   border: 1px solid var(--borde);
@@ -309,28 +357,33 @@ em {
   padding: 1.35rem 1.5rem;
 }
 
+/* Listas internas sin viñetas predeterminadas */
 .tarjeta ul,
 .lista {
   color: #cfcfcf;
   list-style: none;
 }
 
+/* Separación entre elementos de las listas */
 .tarjeta li,
 .lista li {
   margin: 0.35rem 0;
 }
 
+/* Viñeta personalizada de las tarjetas */
 .tarjeta li::before {
   color: var(--rojo);
   content: "▸";
   margin-right: 0.55rem;
 }
 
+/* Lista numerada de cursos o certificaciones */
 .cursos {
   counter-reset: curso;
   list-style: none;
 }
 
+/* Elemento individual de la lista de cursos */
 .cursos li {
   border-bottom: 1px solid var(--borde);
   color: #d7d7d7;
@@ -339,6 +392,7 @@ em {
   position: relative;
 }
 
+/* Número generado automáticamente para cada curso */
 .cursos li::before {
   align-items: center;
   background: var(--rojo);
@@ -356,21 +410,25 @@ em {
   width: 2rem;
 }
 
+/* Texto auxiliar o información secundaria */
 .nota {
   color: var(--gris-claro);
   display: block;
   font-size: 0.86rem;
 }
 
+/* Enlaces incluidos dentro de listas */
 .lista a {
   color: #f06a70;
   transition: color 0.2s ease;
 }
 
+/* Estado hover de los enlaces de las listas */
 .lista a:hover {
   color: var(--blanco);
 }
 
+/* Botón flotante para volver al inicio */
 .subir {
   align-items: center;
   background: var(--rojo);
@@ -386,10 +444,12 @@ em {
   z-index: 5;
 }
 
+/* Estado hover del botón de regreso */
 .subir:hover {
   background: var(--rojo-oscuro);
 }
 
+/* Pie de página */
 .pie {
   background: var(--negro-suave);
   border-top: 1px solid var(--borde);
@@ -399,10 +459,12 @@ em {
   text-align: center;
 }
 
+/* Centrado del texto del pie de página */
 .pie p {
   margin: 0 auto;
 }
 
+/* Ajustes para dispositivos móviles */
 @media (max-width: 700px) {
   .barra,
   .contenedor {
@@ -436,6 +498,7 @@ em {
   }
 }
 
+/* Reduce las animaciones cuando el usuario lo solicita */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
